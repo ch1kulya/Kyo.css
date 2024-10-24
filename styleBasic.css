@@ -93,6 +93,7 @@ button {
   padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-family: inherit;
 }
 
 button:hover {
@@ -107,6 +108,7 @@ input, textarea, select {
   padding: 8px;
   width: 100%;
   margin-bottom: 15px;
+  font-family: inherit;
 }
 
 code {

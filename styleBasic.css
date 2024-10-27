@@ -167,6 +167,7 @@ footer {
   
   .theme-toggle:hover {
     color: var(--link-color);
+    background-color: unset;
   }
 
 /* Стили для кастомного поля загрузки файлов */

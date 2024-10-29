@@ -96,7 +96,8 @@ button {
   font-family: inherit;
 }
 
-button:hover {
+button:hover,
+.file-upload-label:hover {
   background-color: var(--border-color);
 }
 
@@ -196,8 +197,4 @@ footer {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.file-upload-label:hover {
-  background-color: var(--border-color);
 }

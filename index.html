@@ -1,97 +1,170 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Тестовая страница</title>
-  <link rel="stylesheet" href="styleBasic.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="basic/styles.css" rel="stylesheet">
+    <link href="basic/toggle.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <!-- Переключатель темы -->
-    <button id="theme-toggle" class="theme-toggle">🌙</button>
+    <div class="wrap">
+        <h1 class="h1 txt-center mb">Kyo.css demo</h1>
+        <p class="txt mb">Пример использования CSS классов из basic/styles.css.</p>
 
-    <!-- Остальное содержимое страницы -->
-    <h1>Заголовок уровня 1</h1>
-    <h2>Заголовок уровня 2</h2>
-    <h3>Заголовок уровня 3</h3>
-    <p>Это пример параграфа. Здесь можно написать любой текст для демонстрации стилей. Посмотрите, как выглядит <a href="#">ссылка</a> в тексте.</p>
-    <p>Другой параграф с <strong>жирным текстом</strong> и <em>курсивом</em>.</p>
+        <!-- Типография -->
+        <section class="mb">
+            <h2 class="h2">Типография</h2>
+            
+            <div class="mb">
+                <h1 class="h1">Заголовок H1</h1>
+                <h2 class="h2">Заголовок H2</h2>
+                <h3 class="h3">Заголовок H3</h3>
+                <h4 class="h4">Заголовок H4</h4>
+                <h5 class="h5">Заголовок H5</h5>
+                <h6 class="h6">Заголовок H6</h6>
+            </div>
 
-    <h2>Список</h2>
-    <ul>
-      <li>Первый элемент списка</li>
-      <li>Второй элемент списка</li>
-      <li>Третий элемент списка</li>
-    </ul>
+            <div class="mb">
+                <p class="txt">Обычный текст</p>
+                <p class="txt txt-sm">Маленький текст</p>
+                <p class="txt txt-lg">Большой текст</p>
+                <p class="txt txt-center">Центрированный текст</p>
+                <a href="#" class="link">Ссылка</a>
+            </div>
+        </section>
 
-    <h2>Таблица</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Заголовок 1</th>
-          <th>Заголовок 2</th>
-          <th>Заголовок 3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Ячейка 1</td>
-          <td>Ячейка 2</td>
-          <td>Ячейка 3</td>
-        </tr>
-        <tr>
-          <td>Ячейка 4</td>
-          <td>Ячейка 5</td>
-          <td>Ячейка 6</td>
-        </tr>
-      </tbody>
-    </table>
+        <!-- Списки -->
+        <section class="mb">
+            <h2 class="h2">Списки</h2>
+            
+            <ul class="list mb">
+                <li class="list-item">Первый элемент</li>
+                <li class="list-item">Второй элемент</li>
+                <li class="list-item">Третий элемент</li>
+            </ul>
+        </section>
 
-    <h2>Форма</h2>
-    <form>
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name">
+        <!-- Таблицы -->
+        <section class="mb">
+            <h2 class="h2">Таблицы</h2>
+            
+            <table class="tbl">
+                <thead>
+                    <tr>
+                        <th class="tbl-cell tbl-header">Заголовок 1</th>
+                        <th class="tbl-cell tbl-header">Заголовок 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tbl-cell">Ячейка 1</td>
+                        <td class="tbl-cell">Ячейка 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-      <label for="email">Электронная почта:</label>
-      <input type="email" id="email" name="email">
+        <!-- Кнопки -->
+        <section class="mb">
+            <h2 class="h2">Кнопки</h2>
+            
+            <div class="flex gap-md mb">
+                <button class="btn">Обычная кнопка</button>
+                <button class="btn btn-pri">Основная кнопка</button>
+                <button class="btn" disabled>Неактивная кнопка</button>
+            </div>
+        </section>
 
-      <label for="message">Сообщение:</label>
-      <textarea id="message" name="message" rows="4"></textarea>
+        <!-- Поля ввода -->
+        <section class="mb">
+            <h2 class="h2">Поля ввода</h2>
+            
+            <input type="text" class="inp" placeholder="Обычное поле ввода">
+            <input type="text" class="inp" value="Неактивное поле" disabled>
+        </section>
 
-      <button type="submit">Отправить</button>
-    </form>
+        <!-- Загрузка файлов -->
+        <section class="mb">
+            <h2 class="h2">Загрузка файлов</h2>
+            
+            <div class="upl">
+                <input type="file" class="upl-input" id="file">
+                <label for="file" class="upl-label">
+                    <span class="spin"></span>
+                    Выберите файл
+                </label>
+                <div class="upl-preview">
+                    <img src="" alt="Preview">
+                </div>
+            </div>
+        </section>
 
-    <h2>Код</h2>
-    <p>Пример встроенного кода: <code>console.log('Hello, world!');</code></p>
+        <!-- Код -->
+        <section class="mb">
+            <h2 class="h2">Код</h2>
+            
+            <code class="code mb">console.log('Hello');</code>
+            
+            <pre class="code-block">
+function example() {
+    return 'Hello, World!';
+}</pre>
+        </section>
 
-    <pre><code>
-// Пример блока кода
-function greet(name) {
-  return 'Привет, ' + name + '!';
-}
-    </code></pre>
+        <!-- Утилиты -->
+        <section class="mb">
+            <h2 class="h2">Утилиты</h2>
 
-    <h2>Прогресс и спиннер</h2>
-    <div class="spinner"></div>
+            <h3 class="h3">Flexbox</h3>
+            <div class="mb">
+                <div class="flex items-center justify-center gap-md">
+                    <div>Flex элемент 1</div>
+                    <div>Flex элемент 2</div>
+                </div>
+                <div class="flex-col">
+                    <div>Column элемент 1</div>
+                    <div>Column элемент 2</div>
+                </div>
+            </div>
 
-    <h2>Обычная кнопка</h2>
-    <button type="button">Нажми меня</button>
+            <h3 class="h3">Grid</h3>
+            <div class="mb">
+                <div class="grid gap-md" style="grid-template-columns: repeat(2, 1fr);">
+                    <div>Grid элемент 1</div>
+                    <div>Grid элемент 2</div>
+                    <div>Grid элемент 3</div>
+                    <div>Grid элемент 4</div>
+                </div>
+            </div>
 
-    <h2>Загрузка файлов</h2>
-    <div class="file-upload">
-      <label for="file-input" class="file-upload-label">Выберите файл</label>
-      <input type="file" id="file-input">
+            <h3 class="h3">Размеры</h3>
+            <div class="mb">
+                <div class="w-full">width: 100%</div>
+                <div class="h-full">height: 100%</div>
+            </div>
+
+            <h3 class="h3">Выравнивание текста</h3>
+            <div class="mb">
+                <div class="text-left">text-align: left</div>
+                <div class="text-center">text-align: center</div>
+                <div class="text-right">text-align: right</div>
+            </div>
+
+            <h3 class="h3">Жирность шрифта</h3>
+            <div class="mb">
+                <div class="fw-normal">font-weight: 400</div>
+                <div class="fw-medium">font-weight: 500</div>
+            </div>
+        </section>
+
+        <button id="theme-toggle" class="toggle">☀️</button>
+
+        <footer class="foot">
+            <p>Kyo.css &middot; made with ♡ by <a class="link" href="https://github.com/ch1kulya">ch1ka</a></p>
+        </footer>
     </div>
-
-  <h2>Футер</h2>
-
-  <footer>
-    <p>made with ♡ by ch1ka</p>
-  </footer>
-  </div>
-
-  <script src="theme.min.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>

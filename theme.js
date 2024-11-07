@@ -1,49 +1,47 @@
 /* theme.js */
+class ThemeManager {
+  constructor() {
+    this.themeToggle = document.getElementById('theme-toggle');
+    this.darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    this.theme = localStorage.getItem('theme');
+    
+    this.init();
+  }
 
-(function() {
-    const themeToggle = document.getElementById('theme-toggle');
-  
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark-mode');
-        themeToggle.textContent = '🌙';
-      } else {
-        document.documentElement.classList.remove('dark-mode');
-        themeToggle.textContent = '☀️';
-      }
+  init() {
+    // Инициализация начальной темы
+    if (this.theme) {
+      this.applyTheme(this.theme);
+    } else {
+      this.setTheme(this.darkModeMediaQuery.matches ? 'dark' : 'light');
     }
-  
-    function setTheme(theme) {
-      localStorage.setItem('theme', theme);
-      applyTheme(theme);
+
+    // Установка обработчиков событий
+    this.themeToggle.addEventListener('click', () => this.toggleTheme());
+    this.darkModeMediaQuery.addEventListener('change', (e) => this.handleSystemThemeChange(e));
+  }
+
+  applyTheme(theme) {
+    document.documentElement.classList.toggle('dark-mode', theme === 'dark');
+    this.themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+  }
+
+  setTheme(theme) {
+    this.theme = theme;
+    localStorage.setItem('theme', theme);
+    this.applyTheme(theme);
+  }
+
+  toggleTheme() {
+    this.setTheme(this.theme === 'dark' ? 'light' : 'dark');
+  }
+
+  handleSystemThemeChange(e) {
+    if (!this.theme) {
+      this.setTheme(e.matches ? 'dark' : 'light');
     }
-  
-    // Обработчик события для переключателя темы
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
-      setTheme(currentTheme);
-    });
-  
-    // Начальная установка темы
-    (function() {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        applyTheme(savedTheme);
-      } else {
-        // Если тема не сохранена, используем системные настройки
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          setTheme('dark');
-        } else {
-          setTheme('light');
-        }
-      }
-    })();
-  
-    // Слушаем изменения системной темы
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-      if (!localStorage.getItem('theme')) { // Меняем тему только если пользователь не выбрал вручную
-        setTheme(e.matches ? 'dark' : 'light');
-      }
-    });
-  })();
-  
+  }
+}
+
+// Инициализация менеджера тем при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => new ThemeManager());

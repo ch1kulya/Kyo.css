@@ -268,14 +268,14 @@ h6.h6 {
 
 /* Код */
 .code {
-  background-color: var(--c-inp);
+  background-color: var(--c-btn);
   padding: var(--gap-xs) var(--gap-sm);
   border-radius: var(--gap-xs);
   font-family: 'Fira Code', monospace;
 }
 
 .code-block {
-  background-color: var(--c-inp);
+  background-color: var(--c-btn);
   padding: var(--gap-md);
   border-radius: var(--gap-xs);
   overflow-x: auto;
